@@ -1,6 +1,6 @@
-import redux from "react-redux"
-import { IReducer, IRootState } from "../types/store";
+import { useSelector as reduxSelector } from "react-redux"
+import { TReducer, TRootState } from "../types/store";
 
-const useSelector = (reducer: IReducer) => redux.useSelector<IRootState>(state => state[reducer])
+const useSelector = (reducer: TReducer) => <TRootState> reduxSelector<TRootState>(state => state[reducer])
 
 export default useSelector;

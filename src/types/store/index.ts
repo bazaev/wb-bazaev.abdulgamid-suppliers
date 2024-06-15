@@ -1,5 +1,5 @@
 import store from "../../store";
 
-export type IRootState = ReturnType<typeof store.getState>
+export type TRootState = ReturnType<typeof store.getState>
 
-export type IReducer = keyof IRootState;
+export type TReducer = keyof TRootState;

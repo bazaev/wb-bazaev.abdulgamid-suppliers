@@ -1,17 +1,18 @@
-export interface ICity {
+export interface IWarehouse {
 	id: number,
-	name: string
+	name: string,
+	address: string
 }
 
 type error = string | undefined
 
 export interface IInitialState {
-	cities: ICity[] | undefined,
+	warehouses: IWarehouse[] | undefined,
 	loading: boolean,
 	error: error
 }
 
 export interface IAction {
 	type: string,
-	payload: ICity[] | {error: error}
+	payload: IWarehouse[] | {error: error}
 }
