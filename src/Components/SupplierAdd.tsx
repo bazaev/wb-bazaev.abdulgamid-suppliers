@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import Button from '../UI/Button';
 import Select from '../UI/Select';
@@ -109,7 +109,7 @@ const SupplierAdd: React.FC<IProps> = ({ close }) => {
 							<span className={style.label_title}>Статус</span>
 							<Select
 								title="Статус"
-								list={['Задерживается', 'В пути']}
+								list={['В пути','Задерживается']}
 								onSelect={value => status.current = value} />
 						</label>
 					</div>

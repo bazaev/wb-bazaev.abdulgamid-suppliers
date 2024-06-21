@@ -76,7 +76,7 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
-	/* padding: 8px; */
+	padding: 8px;
 }
 
 .subValue {

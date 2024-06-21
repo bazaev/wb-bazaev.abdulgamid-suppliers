@@ -62,7 +62,7 @@ const Layer: React.FC<PropsWithChildren<IParams>> = ({
 			window.removeEventListener('resize', close)	
 			document.removeEventListener('mousedown', closeOutsideClick);
 		}
-	}, []);
+	}, [close, anchorRef, align, fullWidth]);
 
 	return (
 		<div ref={layerRef} className={style.layer} style={layerStyle}>

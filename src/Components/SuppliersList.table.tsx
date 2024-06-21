@@ -6,8 +6,11 @@ import { EStatus, EType } from '../utils/enums/supplier';
 
 import style from '../styles/Components/suppliersList.table.module.css'
 import icons from '../styles/icons.module.css'
+import useActions from '../hooks/useActions';
 
 const SuppliersListTable: React.FC<IParams> = ({ items }) => {
+
+	const { deleteSupplier } = useActions();
 
 	const supplierItems = useMemo(() => (
 		items.map(item => (
@@ -32,19 +35,19 @@ const SuppliersListTable: React.FC<IParams> = ({ items }) => {
 					<div className={style.subValue}>{item.warehouse.address}</div>
 				</td>
 				<td className={style.status}>
-					<Tag type={item.status ? 'success' : 'warning'}>
+					<Tag type={!item.status ? 'success' : 'warning'}>
 						{EStatus[item.status]}
 					</Tag>
 				</td>
 				<td className={style.menu}>
-					<button className={`${style.menuBtn} ${icons.icon} ${icons.kebab}`}></button>
+					<button className={`${style.menuBtn} ${icons.icon} ${icons.close}`} onClick={()=>deleteSupplier(item.id)}></button>
 				</td>
 			</tr>
 		))
-	), [items])
+	), [items, deleteSupplier])
 	
 	return (
-		<table className={style.table} cellPadding={8}>
+		<table className={style.table} cellPadding={0}>
 			<thead>
 				<tr>
 					<th>Номер</th>

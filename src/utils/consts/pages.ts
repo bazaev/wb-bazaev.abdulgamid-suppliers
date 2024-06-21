@@ -1,6 +1,6 @@
 import Suppliers from "../../Pages/Suppliers";
 
-export default [
+const pages = [
 	{
 		name: "/suppliers",
 		title: "Поставки",
@@ -23,3 +23,5 @@ export default [
 		title: "Реклама"
 	},
 ]
+
+export default pages

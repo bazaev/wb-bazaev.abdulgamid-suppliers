@@ -29,7 +29,7 @@ const SuppliersListBlock: React.FC<IParams> = ({ items }) => {
 						<div className={style.content}>{item.date}</div>
 					</div>
 					<div className={style.status}>
-						<Tag type={item.status ? 'success' : 'warning'}>
+						<Tag type={!item.status ? 'success' : 'warning'}>
 							{EStatus[item.status]}
 						</Tag>
 					</div>

@@ -8,10 +8,12 @@ const Stub = () => <h1 style={{color: 'white'}}>
 
 const defaultPage = pages[0].name;
 
-export default () => <Routes>
+const Router = () => (<Routes>
 	<Route path="/" element={<Navigate to={defaultPage} />} />
 	{pages.map(page => 
 		<Route key={page.name} path={page.name} element={page.Component ? <page.Component /> : <Stub />} />
 	)}
 	<Route path="*" element={<Navigate to={defaultPage} />} />
-</Routes>
+</Routes>)
+
+export default Router

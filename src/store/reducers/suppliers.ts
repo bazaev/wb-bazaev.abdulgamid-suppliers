@@ -38,8 +38,7 @@ const suppliersSlice = createThunkSlice({
 		),
 		
 		addSupplier: create.asyncThunk(
-			async (supplier: any, ...q) => {
-				console.log(supplier);
+			async (supplier: any) => {
 				return await fetch('/api/suppliers', {
 					method: 'POST',
 					headers: {
@@ -50,12 +49,43 @@ const suppliersSlice = createThunkSlice({
 			},
 			{				
 				fulfilled: (state, action) => {
-					console.log(action)
 					if ("error" in action.payload) {
 						state.error = action.payload.error
 						return;
 					}
 					state.suppliers?.unshift(action.meta.arg);
+				},
+
+				rejected: (state, action) => {
+					state.loading = false;
+					state.error = action.error.message;
+				}
+			}
+		),
+		
+		deleteSupplier: create.asyncThunk(
+			async (id: any) => {
+				return await fetch('/api/suppliers', {
+					method: 'DELETE',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({id})
+				}).then(r => r.json())
+			},
+			{				
+				fulfilled: (state, action) => {
+					if ("error" in action.payload) {
+						state.error = action.payload.error
+						return;
+					}
+
+					if (!state.suppliers?.length) return;
+					
+					const index = state.suppliers.findIndex((item) => item.id === action.meta.arg);
+					if (index !== -1) {
+						state.suppliers?.splice(index, 1);
+					}
 				},
 
 				rejected: (state, action) => {

@@ -61,7 +61,7 @@ const SortSearchField: React.FC = memo(() => {
 	), []);
 
 	useEffect(() => {
-		console.log(searchText)
+		// console.log(searchText)
 	}, [searchText]);
 
 	return (<>

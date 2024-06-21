@@ -1,9 +1,12 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import style from '../styles/Components/calendar.module.css';
+import React, { useEffect, useMemo, useState } from 'react';
 import icon from '../styles/icons.module.css';
 import IParams from '../types/Components/calendar';
 
+import style from '../styles/Components/calendar.module.css';
+
 const rows = 5;
+
+const weekdays = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'];
 
 const Calendar: React.FC<IParams> = ({ onSelect, date }) => {
 
@@ -21,13 +24,14 @@ const Calendar: React.FC<IParams> = ({ onSelect, date }) => {
 	const [ currentDay, currentMonth, currentYear ] = useMemo(() => {
 		const date = new Date();
 		return [date.getDate(), date.getMonth() + 1, date.getFullYear()];
-	}, [])
+	}, []) // eslint-disable-line
 
-	const day = currentDate.getDate();
 	const monthName = currentDate.toLocaleString('default', { month: 'long' });
 	const year = currentDate.getFullYear();
 
-	const prevDisabled = useMemo(() => year === currentYear && month + 1 === currentMonth, [month]);
+	const prevDisabled = useMemo(() => (
+		year === currentYear && month + 1 === currentMonth
+	), [month, year, currentMonth, currentYear]);
 
 	const increment = () => setMonth(month + 1);
 	const decrement = () => setMonth(month - 1);
@@ -75,7 +79,7 @@ const Calendar: React.FC<IParams> = ({ onSelect, date }) => {
 		setDays(daysCurrentMonth as any);
 		setPrevDays(lastPreviousMonthDays as any);
 		setCurrentDate(newDate);
-	}, [month]);
+	}, [month, currentYear]);
 	
 	return (
 		<div className={style.calendar}>
@@ -87,6 +91,12 @@ const Calendar: React.FC<IParams> = ({ onSelect, date }) => {
 				<button className={`${style.button} ${icon.icon} ${icon.arrow_right}`} onClick={increment}></button>
 			</div>
 			<div className={style.body}>
+				{weekdays.map((day, key) => (
+					<span
+						className={`${style.day} ${style.week} ${key >= 5 ? style.weekend : ''}`}
+						key={key}
+					>{day}</span>
+				))}
 				{prevDays.map((day, key) => (
 					<button
 						key={key}

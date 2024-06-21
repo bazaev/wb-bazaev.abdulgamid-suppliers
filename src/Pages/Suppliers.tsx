@@ -68,9 +68,9 @@ const Suppliers: React.FC = () => {
 				{!isMobile && <SearchField />}
 			</div>
 
-			{!items.length
+			{!suppliers
 				? <Loading />
-				: <SuppliersList items={items} />}
+				: items.length ? <SuppliersList items={items} /> : <></>}
 
 			{addSupplier && <SupplierAdd close={() => setAddSupplier(false)} />}
 		</div>

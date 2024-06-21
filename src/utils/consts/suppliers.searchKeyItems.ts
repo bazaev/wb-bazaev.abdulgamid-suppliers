@@ -1,4 +1,4 @@
-export default [
+const searchKeyItems = [
 	{
 		key: "id",
 		title: "По номеру"
@@ -16,3 +16,5 @@ export default [
 		title: "По статусу"
 	},
 ]
+
+export default searchKeyItems

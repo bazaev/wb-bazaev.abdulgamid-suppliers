@@ -4,6 +4,6 @@ export enum EType {
 }
 
 export enum EStatus {
-	"Задерживается",
-	"В пути"
+	"В пути",
+	"Задерживается"
 }
