@@ -1,5 +1,16 @@
-@import url('default.css');
+@import url('_default.css');
+@import url('_font.css');
 
 html {
 	background-color: #2D2C32;
+	font-family: 'ALS Hauss VF';
+}
+
+body {
+	display: flex;
+	height: 100vh;
+}
+
+#root {
+	flex: 1;
 }

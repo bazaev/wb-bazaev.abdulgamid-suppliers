@@ -1,0 +1,76 @@
+.calendar {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 10px;
+	width: 266px;
+	height: 262px;
+	background-color: #FFFFFF;
+	padding: 16px 16px 20px 16px;
+	border-radius: 8px;
+	box-shadow: 0px 20px 20px #0000000A,
+				inset 0px 0px 0px 1px #F0F0F3;
+}
+
+.header {
+	display: flex;
+}
+
+.button {
+	width: 24px;
+	height: 24px;
+}
+
+.button[disabled] {
+	opacity: .2;
+}
+
+.title {
+	flex: 1;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 560;
+	line-height: 20px;
+}
+
+.title::first-letter {
+	text-transform: uppercase;
+}
+
+.body {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.dayBtn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 38px;
+	height: 38px;
+	border: 1px solid #F0F0F3;
+	box-sizing: border-box;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.dayBtn[disabled] {
+	color: #D1CFD7;
+	border: 0;
+}
+
+.dayBtn.selected {
+	background-color: #E4EAFF;
+}
+
+.day {
+	font-size: 16px;
+	font-weight: 560;
+	line-height: 20px;
+}
+
+.day.week {
+	font-size: 13px;
+	line-height: 16px;
+	border: none;
+	cursor: default;
+}

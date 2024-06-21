@@ -1,0 +1,28 @@
+.select {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	grid-gap: 4px;
+	-webkit-user-select: none;
+}
+
+.field {
+	display: flex;
+	padding: 12px 16px;
+	border-radius: 10px;
+	background-color: #FFFFFF14;
+	cursor: pointer;
+}
+
+.text {
+	flex: 1;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: 440;
+	line-height: 20px;
+}
+
+.icon {
+	width: 20px;
+	height: 20px;
+}

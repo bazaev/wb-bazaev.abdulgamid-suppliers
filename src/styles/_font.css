@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'ALS Hauss VF';
+    src: url('../assets/fonts/ALSHauss-Regular.woff') format('woff');
+    font-weight: 440;
+}
+
+@font-face {
+    font-family: 'ALS Hauss VF';
+    src: url('../assets/fonts/ALSHauss-Medium.woff') format('woff');
+    font-weight: 560;
+}
+
+@font-face {
+    font-family: 'ALS Hauss VF';
+    src: url('../assets/fonts/ALSHauss-Bold.woff') format('woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'ALS Hauss VF';
+    src: url('../assets/fonts/ALSHauss-Light.woff') format('woff');
+    font-weight: lighter;
+}

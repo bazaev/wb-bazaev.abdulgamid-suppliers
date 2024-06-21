@@ -1,0 +1,27 @@
+.header {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 60px;
+	padding: 0px 16px;
+	border-bottom: 1px solid #424146;
+	background: linear-gradient(180deg, #6366F140 0%, #6366F100 35%);
+}
+
+.actionButton {
+	width: 36px;
+	height: 36px;
+}
+
+.actions {
+	display: flex;
+	grid-gap: 4px;
+}
+
+.logo {
+	position: absolute;
+	left: calc(50% - 23px);
+	width: 43px;
+	height: 24px;
+}

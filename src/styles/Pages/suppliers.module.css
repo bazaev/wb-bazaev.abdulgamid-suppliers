@@ -1,0 +1,46 @@
+.suppliers {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 20px;
+}
+
+.header {
+	display: flex;
+	grid-gap: 24px;
+}
+
+.header_title {
+	flex: 1;
+	color: #FFFFFF;
+	font-size: 32px;
+	font-weight: 680;
+	line-height: 40px;
+}
+
+.add_delivery {
+	grid-gap: 10px;
+	padding: 8px;
+	margin: 2px;
+}
+
+.add_delivery:hover {
+	background-color: #FFFFFF14;
+}
+
+.add_btn {
+	width: 20px;
+	height: 20px;
+}
+
+.add_label {
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: 560;
+	line-height: 20px;
+}
+
+@media screen and (max-width: 1366px) {
+	.header {
+		margin: 0px 16px;
+	}
+}

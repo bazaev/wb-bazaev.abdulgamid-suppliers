@@ -1,0 +1,58 @@
+.suppliersList {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 4px;
+	padding: 0px 16px;
+}
+
+.item {
+	display: grid;
+	grid-template-columns: 1fr 1fr auto;
+	grid-template-areas:
+		"number date edit"
+		"status status edit";
+	align-items: center;
+	background-color: #FFFFFF14;
+	border-radius: 14px;
+	padding: 4px;
+}
+
+.number {
+	grid-area: number;
+}
+
+.date {
+	grid-area: date;
+}
+
+.status {
+	grid-area: status;
+	padding: 8px;
+}
+
+.edit {
+	grid-area: edit;
+}
+
+.edit_icon {
+	width: 40px;
+	height: 40px;
+}
+
+.title {
+	color: #FFFFFF;
+	font-size: 13px;
+	font-weight: 560;
+	line-height: 16px;
+	letter-spacing: 0.01em;
+	opacity: .4;
+	padding: 6px 6px 0px 6px;
+}
+
+.content {
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: 560;
+	line-height: 20px;
+	padding: 4px 8px;
+}

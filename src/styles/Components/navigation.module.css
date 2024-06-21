@@ -1,0 +1,9 @@
+.navigation {
+	flex: none;
+	display: flex;
+	grid-gap: 2px;
+	width: fit-content;
+	background-color: #FFFFFF14;
+	border-radius: 10px;
+	padding: 2px;
+}

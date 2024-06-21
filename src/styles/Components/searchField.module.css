@@ -1,0 +1,74 @@
+.field {
+	display: flex;
+	align-items: center;
+	grid-gap: 4px;
+	padding: 4px;
+	background-color: #FFFFFF14;
+	border-radius: 14px;
+}
+
+.field:hover {
+	background-color: #FFFFFF3D;
+}
+
+.button {
+	display: flex;
+	align-items: center;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: 440;
+	line-height: 20px;
+	grid-gap: 10px;
+	padding: 6px 8px;
+	border-radius: 10px;
+	background-color: #2D2C32;
+	white-space: nowrap;
+}
+
+.button:hover,
+.button.active {
+	background-color: #FFFFFF3D;
+}
+
+.button_icon {
+	width: 24px;
+	height: 24px;
+}
+
+.search_form {
+	display: flex;
+	grid-gap: 4px;
+	align-items: center;
+	padding: 6px 12px;
+	cursor: text;
+}
+
+.search_input {
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: 440;
+	line-height: 20px;
+}
+
+.search_input::placeholder {
+	color: #FFFFFF3D;
+}
+
+.search_input:focus::placeholder {
+	color: transparent;
+}
+
+.search_input:focus + .search_icon {
+	opacity: initial;
+}
+
+.search_input:focus ~ .field {
+	background-color: red;
+}
+
+.search_icon {
+	width: 24px;
+	height: 24px;
+	opacity: .25;
+	transition: opacity .2s;
+}
